@@ -46,11 +46,17 @@ public:
             freq[num]++;
         }
         for(auto& i: freq) {
+            // push the pair into the priority queue
+            // structure of the pair is (freq, num)
          prioQ.push({i.second, i.first});
         }
+        // pop the top k elements from the priority queue
         for(int i = 0; i < k; i++) {
+            // the top element of the priority queue is the element with the highest frequency
             ii p = prioQ.top();
-         prioQ.pop();
+            // push the element into the result vector
+            prioQ.pop();
+            // the second element of the pair is the number
             result.push_back(p.second);
         }
         // Your alternative solution goes here
