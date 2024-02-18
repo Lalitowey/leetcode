@@ -14,7 +14,8 @@ class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         int n = nums.size();
-        vector<int> output(n, 1);
+        vector<int> output;
+        output.reserve(n);
         int left = 1, right = 1;
         for (int i = 0; i < n; i++) {
             output[i] *= left;
